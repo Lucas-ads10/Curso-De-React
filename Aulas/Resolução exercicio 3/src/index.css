@@ -1,0 +1,12 @@
+* {
+    margin: 0;/*Padrão*/
+    padding: 0;
+}
+
+/*aplicar alguns estilos globalmente*/
+.app {
+    background-color: rgb(66, 140, 209);
+    display: grid; /*Forma mais simples de centralizar o componente*/
+    place-content: center; /*Colocar o conteudo no centro*/
+    min-height: 100vh; /*Altura minima ser a altura da pagina*/
+}
