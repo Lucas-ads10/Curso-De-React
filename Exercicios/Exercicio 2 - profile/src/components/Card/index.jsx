@@ -1,19 +1,24 @@
+import LinkButton from "../LinkButton/index."
+import CardSection from "./CardSection"
+import Title from "./Title"
 import styles from "./styles.module.css"
 
-export default function Card({name, posterImg, legends, number, email, githubUrl, linkedinUrl  }){
+export default function Card(props){
     return(
         <div className={styles.container}>
-            <img className={styles.poster} src={posterImg} alt="name"></img>
-                <h2>{name}</h2>
-                <p>{legends}</p>
-                <hr />
-                <p>{number}</p>
-                <hr />
-                <p>{email}</p>
-            <div className={styles.links}>
-                <a href={githubUrl} target="_blank">GitHub</a>
-                <a href={linkedinUrl} target="_blank">Linkedin</a>
-            </div>
+            <img className={styles.poster} src={props.posterImg} alt={props.name}></img>
+            <Title>
+                <span>{props.name}</span>
+            </Title>
+            <CardSection>{props.legends}</CardSection>
+            <CardSection>{props.number}</CardSection>
+            <CardSection>{props.email}</CardSection>
+            <CardSection
+                className={styles.links}
+            >
+                <LinkButton href={props.githubUrl}>GitHub</LinkButton>
+                <LinkButton href={props.linkedinUrl}>Linkedin</LinkButton>
+            </CardSection>
         </div>
     )
 }
