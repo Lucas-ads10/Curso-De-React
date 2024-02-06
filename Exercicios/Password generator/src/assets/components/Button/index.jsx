@@ -13,7 +13,11 @@ export default function Button(){
 
     return(
         <div>
-            <p>{password}</p>
+            <p 
+                className={styles.password}
+                >
+                {password}
+                </p>
             <button 
                 className={styles.wrapper}
                 onClick={generatePassword}
